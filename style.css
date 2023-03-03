@@ -357,7 +357,7 @@ h6 {
 .social-links {
   display: grid;
   align-content: center;
-  text-align: center;
+  /* text-align: center; */
 }
 
 #social_img {
