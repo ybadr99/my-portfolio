@@ -39,7 +39,7 @@
             </a>
 
             <ul id="navigation">
-              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="#contact-form">Contact</a></li>
             </ul>
           </div>
 
@@ -195,6 +195,44 @@
       </div>
     </section>
     <!-- End Works -->
+    <!-- Start Contact -->
+
+    <section class="contact">
+      <div class="container">
+        <a href=""></a>
+        <h3 style="text-align: center">Get In Touch</h3>
+
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xpzewdnr"
+          method="post"
+        >
+          <div>
+            <label>Name</label>
+            <input class="input-field" type="text" name="name" />
+            <small></small>
+          </div>
+          <div>
+            <label>Subject</label>
+            <input class="input-field" type="text" name="subject" />
+            <small></small>
+          </div>
+          <div>
+            <label>Email</label>
+            <input class="input-field" type="text" name="email" />
+            <small></small>
+          </div>
+          <div>
+            <label>Message</label>
+            <textarea class="input-field" name="message"></textarea>
+            <small></small>
+          </div>
+          <input id="submit-btn" type="submit" value="Send" />
+        </form>
+      </div>
+    </section>
+    <!-- End Contact -->
+
     <script src="./script.js"></script>
   </body>
 </html>

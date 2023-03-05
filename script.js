@@ -1,5 +1,7 @@
 console.log("Its working");
 
+const form = document.querySelector("#contact-form");
+
 let theme = localStorage.getItem("theme");
 
 if (theme == null) {
@@ -37,3 +39,93 @@ function setTheme(mode) {
 
   localStorage.setItem("theme", mode);
 }
+
+// Start Form validation
+
+// show a message with a type of the input
+function showMessage(input, message, type) {
+  // get the <small> element and set the message
+  const msg = input.parentNode.querySelector("small");
+  msg.className = "error";
+  msg.innerText = message;
+}
+
+form.addEventListener("submit", (e) => {
+  // select the inputs
+  const { name } = form.elements;
+  const { subject } = form.elements;
+  const { email } = form.elements;
+  const { message } = form.elements;
+
+  // validate inputs
+  if (name.value.trim().length === 0) {
+    e.preventDefault();
+    showMessage(name, "Please enter a valid name", false);
+  } else {
+    showMessage(name, "", true);
+  }
+
+  if (subject.value.trim().length === 0) {
+    e.preventDefault();
+    showMessage(subject, "Please enter a valid subject", false);
+  } else {
+    showMessage(subject, "", true);
+  }
+
+  if (message.value.trim().length === 0) {
+    e.preventDefault();
+    showMessage(message, "Please enter a valid text", false);
+  } else {
+    showMessage(message, "", true);
+  }
+  // validate the email and email should be lowercase
+  const emailRegex =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (
+    email.value.trim().length === 0 ||
+    email.value.trim().toLowerCase() !== email.value.trim() ||
+    !emailRegex.test(email.value.trim())
+  ) {
+    e.preventDefault();
+    showMessage(email, "Please enter a valid Email", false);
+  } else {
+    showMessage(email, "", true);
+  }
+
+  form.reset();
+});
+
+// End Form validation
+
+// Start Preserve the form data
+
+// const inputs = ["name", "subject", "email", "message"];
+
+// let formData = JSON.parse(localStorage.getItem("formData"));
+// if (!formData) {
+//   localStorage.setItem("formData", JSON.stringify((formData = {})));
+// }
+
+// const saveToLocalStorage = () => {
+//   localStorage.setItem("formData", JSON.stringify(formData));
+// };
+
+// inputs.forEach((el) => {
+//   form.elements[el].addEventListener("keyup", (e) => {
+//     formData[el] = e.target.value;
+//     saveToLocalStorage();
+//   });
+// });
+
+// // pass the formData to the input field
+// window.addEventListener("load", () => {
+//   if (formData) {
+//     inputs.forEach((el) => {
+//       if (formData[el]) {
+//         form.elements[el].value = formData[el];
+//       }
+//     });
+//   }
+// });
+
+// End preserve form data
