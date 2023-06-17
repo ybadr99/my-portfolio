@@ -12,7 +12,8 @@
   --themeDotBorder: #24292e;
 
   --previewBg: rgb(251, 249, 243, 0.8);
-  --previewShadow: #f0ead6;
+  /* --previewShadow: #f0ead6; */
+  --previewShadow: #d5f7e6;
 
   --buttonColor: black;
 }
@@ -36,7 +37,7 @@ h5,
 h6,
 strong {
   color: var(--mainText);
-  font-family: "Russo One", sans-serif;
+  font-family: 'Russo One', sans-serif;
   font-weight: 500;
 }
 
@@ -47,7 +48,7 @@ label,
 input,
 textarea {
   color: var(--secondaryText);
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
 }
 
 a {
@@ -129,17 +130,17 @@ h6 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "nav-wrapper nav-wrapper"
-    "left-column right-column";
+    'nav-wrapper nav-wrapper'
+    'left-column right-column';
 }
 
 @media screen and (max-width: 800px) {
   .intro-wrapper {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "nav-wrapper"
-      "left-column"
-      "right-column";
+      'nav-wrapper'
+      'left-column'
+      'right-column';
   }
 }
 
@@ -501,6 +502,7 @@ h6 {
   color: #fff;
   background-color: var(--buttonColor);
   border: none;
+  cursor: pointer;
 }
 
 .error {
