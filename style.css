@@ -416,7 +416,8 @@ h6 {
   overflow: auto;
 }
 
-.works h3 {
+.works h3,
+h5 {
   text-align: center;
 }
 
@@ -462,6 +463,10 @@ h6 {
   justify-content: space-between;
   margin-top: 10px;
   /* gap: 10px; */
+}
+
+#github {
+  text-decoration: underline;
 }
 
 /*  End Works*/
