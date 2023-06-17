@@ -456,6 +456,14 @@ h6 {
   color: #4b5156;
   font-size: 14px;
 }
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  /* gap: 10px; */
+}
+
 /*  End Works*/
 /* Start Contact */
 .contact {
@@ -510,3 +518,7 @@ h6 {
 }
 
 /* End Contact */
+
+.bulit-with span {
+  color: #1a2e35;
+}
